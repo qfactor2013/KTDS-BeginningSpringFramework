@@ -1,0 +1,27 @@
+CREATE TABLE SCOTT.DEPT 
+(
+	DEPT_ID     NUMBER (4) NOT NULL,
+	DEPT_NAME   VARCHAR2 (30) CONSTRAINT DEPT_NAME_NN NOT NULL
+);
+ALTER TABLE SCOTT.DEPT ADD(PRIMARY KEY (DEPT_ID));
+
+insert into SCOTT.DEPT values (10,'경제학과');
+insert into SCOTT.DEPT values (20,'컴퓨터공학과');
+insert into SCOTT.DEPT values (30,'영어영문학과');
+insert into SCOTT.DEPT values (40,'건축공학과');
+commit;
+
+CREATE TABLE SCOTT.STUDENT 
+(
+	STU_ID         NUMBER (6) NOT NULL,
+	STU_NAME       VARCHAR2 (20) NOT NULL,
+	STU_AGE        NUMBER (3) NOT NULL,
+	STU_GRADE      VARCHAR2 (20),
+	STU_DAYNIGHT   VARCHAR2 (20),
+	DEPT_ID        NUMBER (4) NOT NULL,
+	CONSTRAINT FK_DEPT_IDS FOREIGN KEY (DEPT_ID) REFERENCES SCOTT.DEPT (DEPT_ID)
+);
+ALTER TABLE SCOTT.STUDENT ADD(PRIMARY KEY (STU_ID));
+
+insert into scott.student values (1002,'홍길동',20,'1학년','주간',30);
+commit;
