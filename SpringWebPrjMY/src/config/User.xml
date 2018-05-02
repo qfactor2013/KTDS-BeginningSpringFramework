@@ -8,6 +8,14 @@
 		select * from users where userid=#{value}
 	</select>
 
+	<select id="selectUserByName" parameterType="String" resultType="myspring.user.vo.UserVO">
+		select * from users where userid=#{value}
+	</select>
+	
+	<select id="selectUserAll" resultType="myspring.user.vo.UserVO">
+		select * from users
+	</select>
+
 	<select id="selectUserList" resultType="User">
 		select * from users order by userid
 	</select>

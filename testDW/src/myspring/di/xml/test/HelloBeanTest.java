@@ -13,7 +13,7 @@ public class HelloBeanTest {
 	public void hellobean() {
 		
 		//1. Spring 컨테이너 객체를 생성
-		BeanFactory factory = new GenericXmlApplicationContext("config/beans.xml");
+		BeanFactory factory = new GenericXmlApplicationContext("/config/beans.xml");
 		
 		//2 bean 객체를 요청
 		Hello hello1 = (Hello)factory.getBean("hello");

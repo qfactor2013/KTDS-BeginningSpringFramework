@@ -2,9 +2,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+	<!-- MyBatis Spring Integration 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="config/SqlMapConfig.xml"></property>
+		<property name="mapperLocations" >
+		  <list>
+		  	<value>classpath:config/mapper/*Mapper.xml</value>
+		  </list>
+		</property>	
+	</bean>
+
+	<!-- properties -->
+	<context:property-placeholder location="classpath:config/value.properties"/>
 	
 	<!-- StringPrinter를 bean definition -->
 	<bean id="stringPrinter" class="myspring.di.xml.StringPrinter" />
@@ -16,5 +34,25 @@
 		<property name="name" value="아무개"></property>
 		<property name="printer" ref="stringPrinter"></property>
 	</bean>
-
+	
+	<!-- DataSource 설정 -->
+	<bean id="dataSource-Old"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	
+	<!-- 프로퍼티 태그 대신에 네임스페이스에서 p태그를 추가하면 보다 간단하게 가능하다 -->
+	<!-- destory-method는 해당 빈이 파괴 될 때 지정한 메소드를 호출함 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" 
+			p:driverClassName="${db.driver-New}"
+			p:url="${db.url-New}"
+			p:username="${db.username-New}"
+			p:password="${db.password-New}"
+			destroy-method="close"/>
+	
+	<!-- MyBatis-Spring을 쓰면 멀티스레드 환경에서 스레드세이프 관련 문제를 해결해줌 -->
+	
 </beans>

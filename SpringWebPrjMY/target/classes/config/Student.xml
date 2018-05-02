@@ -7,6 +7,8 @@
 	<select id="selectStudentById" parameterType="Integer" resultMap="studentResultMap">
 		select * from student where stu_id=#{id}
 	</select>
+	
+	
 
 	<!-- <delete id="deleteStudent" parameterType="Integer"> -->
 	<!-- delete from student where id = #{value} -->
