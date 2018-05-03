@@ -1,0 +1,62 @@
+2018-05-03 22:06:34 342 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 메서드 실행 전처리 수행
+2018-05-03 22:06:34 357 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 아규먼트 vega2k
+2018-05-03 22:06:34 357 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 메서드 실행 전처리 수행
+2018-05-03 22:06:34 357 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 아규먼트 vega2k
+2018-05-03 22:06:34 359 [main] DEBUG myspring.aop.annot.LoggingAspect - @After [ getUser ] 메서드 실행 완료
+2018-05-03 22:06:34 359 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 메서드 실행 후처리 수행
+2018-05-03 22:06:34 359 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 리턴값=User [userId=vega2k, name=백명숙, gender=여, city=서울]
+2018-05-03 22:07:15 684 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 메서드 실행 전처리 수행
+2018-05-03 22:07:15 686 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 아규먼트 vega2k
+2018-05-03 22:07:15 686 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 메서드 실행 전처리 수행
+2018-05-03 22:07:15 687 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 아규먼트 vega2k
+2018-05-03 22:07:15 688 [main] DEBUG myspring.aop.annot.LoggingAspect - @After [ getUser ] 메서드 실행 완료
+2018-05-03 22:07:15 688 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 메서드 실행 후처리 수행
+2018-05-03 22:07:15 688 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 리턴값=User [userId=vega2k, name=백명숙, gender=여, city=서울]
+2018-05-03 22:07:48 410 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 메서드 실행 전처리 수행
+2018-05-03 22:07:48 416 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 아규먼트 vega2k
+2018-05-03 22:07:48 417 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 메서드 실행 전처리 수행
+2018-05-03 22:07:48 417 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 아규먼트 vega2k
+2018-05-03 22:07:48 419 [main] DEBUG myspring.aop.annot.LoggingAspect - @After [ getUser ] 메서드 실행 완료
+2018-05-03 22:07:48 419 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 메서드 실행 후처리 수행
+2018-05-03 22:07:48 419 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 리턴값=User [userId=vega2k, name=백명숙, gender=여, city=서울]
+2018-05-03 22:08:48 508 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+2018-05-03 22:08:49 002 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2018-05-03 22:08:49 006 [main] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ac86ba5] was not registered for synchronization because synchronization is not active
+2018-05-03 22:08:49 043 [main] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [114414807, URL=jdbc:oracle:thin:@192.168.207.11:1521:xe, UserName=SCOTT, Oracle JDBC driver] will not be managed by Spring
+2018-05-03 22:08:49 048 [main] DEBUG userNS.selectUserByName - ==>  Preparing: select * from users where userid=? 
+2018-05-03 22:08:49 143 [main] DEBUG userNS.selectUserByName - ==> Parameters: gildong(String)
+2018-05-03 22:08:49 175 [main] DEBUG userNS.selectUserByName - <==      Total: 1
+2018-05-03 22:08:49 178 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ac86ba5]
+2018-05-03 22:08:49 180 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2018-05-03 22:08:49 180 [main] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@655a5d9c] was not registered for synchronization because synchronization is not active
+2018-05-03 22:08:49 181 [main] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [345290829, URL=jdbc:oracle:thin:@192.168.207.11:1521:xe, UserName=SCOTT, Oracle JDBC driver] will not be managed by Spring
+2018-05-03 22:08:49 181 [main] DEBUG userNS.selectUserAll - ==>  Preparing: select * from users 
+2018-05-03 22:08:49 181 [main] DEBUG userNS.selectUserAll - ==> Parameters: 
+2018-05-03 22:08:49 187 [main] DEBUG userNS.selectUserAll - <==      Total: 17
+2018-05-03 22:08:49 187 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@655a5d9c]
+2018-05-03 22:08:49 188 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2018-05-03 22:08:49 188 [main] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d61eccf] was not registered for synchronization because synchronization is not active
+2018-05-03 22:08:49 188 [main] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [214320652, URL=jdbc:oracle:thin:@192.168.207.11:1521:xe, UserName=SCOTT, Oracle JDBC driver] will not be managed by Spring
+2018-05-03 22:08:49 189 [main] DEBUG userNS.insertUser - ==>  Preparing: insert into users values(?,?,?,? ) 
+2018-05-03 22:08:49 189 [main] DEBUG userNS.insertUser - ==> Parameters: (String), (String), (String), (String)
+2018-05-03 22:08:49 192 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d61eccf]
+2018-05-03 22:08:49 241 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2018-05-03 22:08:49 241 [main] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5af9926a] was not registered for synchronization because synchronization is not active
+2018-05-03 22:08:49 241 [main] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [1137078855, URL=jdbc:oracle:thin:@192.168.207.11:1521:xe, UserName=SCOTT, Oracle JDBC driver] will not be managed by Spring
+2018-05-03 22:08:49 242 [main] DEBUG studentNS.insertStudent - ==>  Preparing: insert into student (stu_id,stu_name,stu_age,stu_grade,stu_daynight,dept_id) values( ?, ?, ?, ?,?,? ) 
+2018-05-03 22:08:49 244 [main] DEBUG studentNS.insertStudent - ==> Parameters: 200(Integer), (String), 5050(Integer), (String), 5(String), 1000(Integer)
+2018-05-03 22:08:49 246 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5af9926a]
+2018-05-03 22:08:49 251 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 메서드 실행 전처리 수행
+2018-05-03 22:08:49 252 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ getUser ] 아규먼트 vega2k
+2018-05-03 22:08:49 252 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 메서드 실행 전처리 수행
+2018-05-03 22:08:49 252 [main] DEBUG myspring.aop.annot.LoggingAspect - @Before [ read ] 아규먼트 vega2k
+2018-05-03 22:08:49 252 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2018-05-03 22:08:49 252 [main] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e587920] was not registered for synchronization because synchronization is not active
+2018-05-03 22:08:49 253 [main] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [788048067, URL=jdbc:oracle:thin:@192.168.207.11:1521:xe, UserName=SCOTT, Oracle JDBC driver] will not be managed by Spring
+2018-05-03 22:08:49 253 [main] DEBUG userNS.selectUserById - ==>  Preparing: select * from users where userid=? 
+2018-05-03 22:08:49 253 [main] DEBUG userNS.selectUserById - ==> Parameters: vega2k(String)
+2018-05-03 22:08:49 254 [main] DEBUG userNS.selectUserById - <==      Total: 1
+2018-05-03 22:08:49 254 [main] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e587920]
+2018-05-03 22:08:49 255 [main] DEBUG myspring.aop.annot.LoggingAspect - @After [ getUser ] 메서드 실행 완료
+2018-05-03 22:08:49 255 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 메서드 실행 후처리 수행
+2018-05-03 22:08:49 255 [main] DEBUG myspring.aop.annot.LoggingAspect - @AfterReturing [ getUser ] 리턴값=User [userId=vega2k, name=백명숙, gender=여, city=서울]

@@ -3,8 +3,35 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	
+	<!-- @Aspect 설정 -->
+	<aop:aspectj-autoproxy proxy-target-class="false"/>
+	
+	
+	<!-- Aspect 설정 -->
+	<aop:config>
+		<aop:aspect ref="ptAdvice">
+			<aop:around method="trace" pointcut="execution(public * myspring.user.service..*(String))"/>
+		</aop:aspect>
+	</aop:config>
+
+	<!-- Around Advice 클래스를 bean 등록 -->
+	<bean id="ptAdvice" class="myspring.aop.xml.PerformanceTraceAdvice"></bean>
+	<!-- 
+	<aop:config>
+		<aop:pointcut expression="execution(public * myspring.user..*(..))" id="txPointCut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+	</aop:config> -->
+
+	<!-- 	Spring Bean Auto Scanning 설정 -->
+	<context:component-scan base-package="myspring.user, myspring.aop.*">
+		<!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+	</context:component-scan>
 
 	<!-- MyBatis Spring Integration 설정 -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

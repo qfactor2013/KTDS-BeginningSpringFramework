@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.aspectj.lang.annotation.Pointcut;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import myspring.user.service.UserService;
+import myspring.user.vo.DeptVO;
 import myspring.user.vo.StudentVO;
 import myspring.user.vo.UserVO;
 
@@ -34,15 +37,8 @@ public class DBTest {
 	@Autowired
 	SqlSession sqlSession;
 	
-	@Test
-	public void student() {
-		// TODO Auto-generated method stub
-		List<StudentVO> listStudentVO = sqlSession.selectList("studentNS.selectStudentDeptById");
-		for(StudentVO vo : listStudentVO) {
-			System.out.println(vo);
-		}
-	}
-	
+	@Autowired
+	UserService userService;
 	
 	@Test
 	public void connection() {
@@ -70,11 +66,25 @@ public class DBTest {
 			System.out.println(vo);			
 		}
 		
-		UserVO oneUser = new UserVO("vega", "아무개", "남", "서울");
+		UserVO oneUser = new UserVO("", "", "", "");
 		//2. 등록
 		int cnt = sqlSession.insert("userNS.insertUser", oneUser);
 		System.out.println("등록된 건수 : " + cnt);
 		
 		
+	}
+	
+	@Test
+	public void service() {
+		UserVO user = userService.getUser("vega2k");
+		System.out.println(user);
+	}
+
+	@Test
+	public void insertStudent() {
+		
+		StudentVO student = new StudentVO(200, "",5050 , "","5",new DeptVO(1000));
+		int cnt = sqlSession.insert("studentNS.insertStudent", student);
+		System.out.println("등록건수 : " + cnt);
 	}
 }
