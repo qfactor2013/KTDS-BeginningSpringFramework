@@ -40,7 +40,7 @@
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="configLocation" value="config/SqlMapConfig.xml"></property>
+		<property name="configLocation" value="classpath:config/SqlMapConfig.xml"></property>
 		<property name="mapperLocations" >
 		  <list>
 		  	<value>classpath:config/mapper/*Mapper.xml</value>
